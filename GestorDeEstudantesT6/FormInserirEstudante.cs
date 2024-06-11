@@ -100,6 +100,11 @@ namespace GestorDeEstudantesT6
                         MessageBoxIcon.Exclamation);
                 }
             }
+            else
+            {
+                MessageBox.Show("Campos não preenchidos!", "Erro!", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
