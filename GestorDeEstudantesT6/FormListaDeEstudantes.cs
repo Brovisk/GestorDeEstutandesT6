@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,30 @@ namespace GestorDeEstudantesT6
         public FormListaDeEstudantes()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        Estudante estudante = new Estudante();
+
+        private void FormListaDeEstudantes_Load(object sender, EventArgs e)
+        {
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM ´estudantes`");
+            dataGridViewListaDeEstudantes.ReadOnly = true;
+            DataGridViewImageColumn colunaDeFotos = new DataGridViewImageColumn();
+            dataGridViewListaDeEstudantes.RowTemplate.Height = 80;
+            dataGridViewListaDeEstudantes.DataSource = estudante.pegarEstudantes(comando);
+            colunaDeFotos = (DataGridViewImageColumn)dataGridViewListaDeEstudantes.Columns[7];
+            colunaDeFotos.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewListaDeEstudantes.AllowUserToAddRows = false;
         }
     }
 }

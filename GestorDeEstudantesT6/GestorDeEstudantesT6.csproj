@@ -57,6 +57,12 @@
     <Compile Include="FormInserirEstudante.Designer.cs">
       <DependentUpon>FormInserirEstudante.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormListaDeEstudantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaDeEstudantes.Designer.cs">
+      <DependentUpon>FormListaDeEstudantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
