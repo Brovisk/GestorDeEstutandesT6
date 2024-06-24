@@ -69,6 +69,12 @@
     <Compile Include="FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulárioInserirEstudante2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulárioInserirEstudante2.Designer.cs">
+      <DependentUpon>FormulárioInserirEstudante2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +87,14 @@
     <EmbeddedResource Include="FormInserirEstudante.resx">
       <DependentUpon>FormInserirEstudante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormListaDeEstudantes.resx">
+      <DependentUpon>FormListaDeEstudantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulárioInserirEstudante2.resx">
+      <DependentUpon>FormulárioInserirEstudante2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>

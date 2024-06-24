@@ -58,6 +58,7 @@ namespace GestorDeEstudantesT6
             // Cria um estudante.
             Estudante estudante = new Estudante();
             //Variáveis auxiliares
+
             string nome = textBoxNome.Text;
             string sobrenome = textBoxSobrenome.Text;
             DateTime nascimento = dateTimePickerNascimento.Value;

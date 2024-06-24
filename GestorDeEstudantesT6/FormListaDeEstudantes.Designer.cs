@@ -35,9 +35,9 @@
             // 
             // buttonAtualizar
             // 
-            this.buttonAtualizar.Location = new System.Drawing.Point(396, 357);
+            this.buttonAtualizar.Location = new System.Drawing.Point(296, 378);
             this.buttonAtualizar.Name = "buttonAtualizar";
-            this.buttonAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAtualizar.Size = new System.Drawing.Size(185, 60);
             this.buttonAtualizar.TabIndex = 0;
             this.buttonAtualizar.Text = "Atualizar";
             this.buttonAtualizar.UseVisualStyleBackColor = true;
@@ -45,12 +45,14 @@
             // 
             // dataGridViewListaDeEstudantes
             // 
+            this.dataGridViewListaDeEstudantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListaDeEstudantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListaDeEstudantes.Location = new System.Drawing.Point(306, 107);
+            this.dataGridViewListaDeEstudantes.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewListaDeEstudantes.Name = "dataGridViewListaDeEstudantes";
-            this.dataGridViewListaDeEstudantes.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewListaDeEstudantes.Size = new System.Drawing.Size(776, 348);
             this.dataGridViewListaDeEstudantes.TabIndex = 1;
             this.dataGridViewListaDeEstudantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewListaDeEstudantes.DoubleClick += new System.EventHandler(this.dataGridViewListaDeEstudantes_DoubleClick);
             // 
             // FormListaDeEstudantes
             // 

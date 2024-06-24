@@ -25,7 +25,7 @@ namespace GestorDeEstudantesT6
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-
+            //Atualiza a lista de estudantes.
         }
 
         Estudante estudante = new Estudante();
@@ -40,6 +40,11 @@ namespace GestorDeEstudantesT6
             colunaDeFotos = (DataGridViewImageColumn)dataGridViewListaDeEstudantes.Columns[7];
             colunaDeFotos.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridViewListaDeEstudantes.AllowUserToAddRows = false;
+        }
+
+        private void dataGridViewListaDeEstudantes_DoubleClick(object sender, EventArgs e)
+        {
+            //Abre as informações do aluno selecionado em uma nova janela.
         }
     }
 }
