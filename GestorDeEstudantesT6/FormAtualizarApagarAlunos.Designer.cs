@@ -1,6 +1,6 @@
 ﻿namespace GestorDeEstudantesT6
 {
-    partial class FormulárioInserirEstudante2
+    partial class FormAtualizarApagarAlunos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormulárioInserirEstudante2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtualizarApagarAlunos));
             this.buttonEnviarFoto = new System.Windows.Forms.Button();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.textBoxEndereco = new System.Windows.Forms.TextBox();
@@ -45,8 +45,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxld = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +57,7 @@
             // buttonEnviarFoto
             // 
             this.buttonEnviarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEnviarFoto.Location = new System.Drawing.Point(101, 461);
+            this.buttonEnviarFoto.Location = new System.Drawing.Point(136, 417);
             this.buttonEnviarFoto.Name = "buttonEnviarFoto";
             this.buttonEnviarFoto.Size = new System.Drawing.Size(138, 51);
             this.buttonEnviarFoto.TabIndex = 32;
@@ -64,7 +67,7 @@
             // pictureBoxFoto
             // 
             this.pictureBoxFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFoto.Image")));
-            this.pictureBoxFoto.Location = new System.Drawing.Point(101, 316);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(136, 272);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(138, 139);
             this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,7 +76,7 @@
             // 
             // textBoxEndereco
             // 
-            this.textBoxEndereco.Location = new System.Drawing.Point(136, 239);
+            this.textBoxEndereco.Location = new System.Drawing.Point(136, 213);
             this.textBoxEndereco.Multiline = true;
             this.textBoxEndereco.Name = "textBoxEndereco";
             this.textBoxEndereco.Size = new System.Drawing.Size(163, 56);
@@ -83,7 +86,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 239);
+            this.label6.Location = new System.Drawing.Point(26, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 20);
             this.label6.TabIndex = 29;
@@ -91,7 +94,7 @@
             // 
             // textBoxTelefone
             // 
-            this.textBoxTelefone.Location = new System.Drawing.Point(136, 206);
+            this.textBoxTelefone.Location = new System.Drawing.Point(136, 180);
             this.textBoxTelefone.Name = "textBoxTelefone";
             this.textBoxTelefone.Size = new System.Drawing.Size(163, 20);
             this.textBoxTelefone.TabIndex = 28;
@@ -100,7 +103,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 206);
+            this.label5.Location = new System.Drawing.Point(26, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 20);
             this.label5.TabIndex = 27;
@@ -110,7 +113,7 @@
             // 
             this.groupBox1.Controls.Add(this.radioButtonMasculino);
             this.groupBox1.Controls.Add(this.radioButtonFeminino);
-            this.groupBox1.Location = new System.Drawing.Point(113, 128);
+            this.groupBox1.Location = new System.Drawing.Point(113, 116);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 56);
             this.groupBox1.TabIndex = 26;
@@ -142,7 +145,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 147);
+            this.label4.Location = new System.Drawing.Point(27, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 25;
@@ -199,13 +202,13 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Nome";
             // 
-            // textBox1
+            // textBoxld
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 34;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxld.Location = new System.Drawing.Point(136, 10);
+            this.textBoxld.Name = "textBoxld";
+            this.textBoxld.Size = new System.Drawing.Size(90, 20);
+            this.textBoxld.TabIndex = 34;
+            this.textBoxld.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label7
             // 
@@ -218,12 +221,46 @@
             this.label7.Text = "Id";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // FormulárioInserirEstudante2
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(224, 8);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.TabIndex = 35;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 474);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 51);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(236, 474);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 51);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Apagar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // FormAtualizarApagarAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 537);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.textBoxld);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonEnviarFoto);
             this.Controls.Add(this.pictureBoxFoto);
@@ -239,7 +276,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label2);
-            this.Name = "FormulárioInserirEstudante2";
+            this.Name = "FormAtualizarApagarAlunos";
             this.Text = "FormulárioInserirEstudante2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -267,7 +304,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox textBoxld;
     }
 }

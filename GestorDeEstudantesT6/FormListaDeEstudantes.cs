@@ -45,6 +45,9 @@ namespace GestorDeEstudantesT6
         private void dataGridViewListaDeEstudantes_DoubleClick(object sender, EventArgs e)
         {
             //Abre as informações do aluno selecionado em uma nova janela.
+            FormAtualizarApagarAlunos formAtualizarApagarAlunos = new FormAtualizarApagarAlunos();
+            formAtualizarApagarAlunos.textBoxld.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[0].Value.ToString();
+            formAtualizarApagarAlunos.Show();
         }
     }
 }

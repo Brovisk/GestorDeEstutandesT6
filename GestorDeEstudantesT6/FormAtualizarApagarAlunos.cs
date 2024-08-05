@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestorDeEstudantesT6
 {
-    public partial class FormulárioInserirEstudante2 : Form
+    public partial class FormAtualizarApagarAlunos : Form
     {
-        public FormulárioInserirEstudante2()
+        public FormAtualizarApagarAlunos()
         {
             InitializeComponent();
         }
@@ -23,6 +23,16 @@ namespace GestorDeEstudantesT6
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
