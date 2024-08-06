@@ -47,6 +47,23 @@ namespace GestorDeEstudantesT6
             //Abre as informações do aluno selecionado em uma nova janela.
             FormAtualizarApagarAlunos formAtualizarApagarAlunos = new FormAtualizarApagarAlunos();
             formAtualizarApagarAlunos.textBoxld.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[0].Value.ToString();
+            formAtualizarApagarAlunos.textBoxNome.Text =
+                dataGridViewListaDeEstudantes.CurrentRow.Cells[1].Value.ToString();
+            formAtualizarApagarAlunos.textBoxSobrenome.Text =
+                dataGridViewListaDeEstudantes.CurrentRow.Cells[2].Value.ToString();
+
+            formAtualizarApagarAlunos.dateTimePickerNascimento.Value =
+                (DateTime) dataGridViewListaDeEstudantes.CurrentRow.Cells[3].Value;
+
+            if (dataGridViewListaDeEstudantes.CurrentRow.Cells[4].Value.ToString() == "Feminino")
+            {
+                formAtualizarApagarAlunos.radioButtonFeminino.Checked = true;
+            }
+            else
+            {
+                formAtualizarApagarAlunos.radioButtonMasculino.Checked = true;
+            }
+
             formAtualizarApagarAlunos.Show();
         }
     }
