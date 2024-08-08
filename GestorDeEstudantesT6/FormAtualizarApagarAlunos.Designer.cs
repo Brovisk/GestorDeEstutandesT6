@@ -48,8 +48,8 @@
             this.textBoxld = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
+            this.buttonApagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -231,34 +231,34 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // buttonSalvar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 474);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 51);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvar.Location = new System.Drawing.Point(12, 474);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(138, 51);
+            this.buttonSalvar.TabIndex = 36;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // buttonApagar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(236, 474);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 51);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Apagar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonApagar.Location = new System.Drawing.Point(236, 474);
+            this.buttonApagar.Name = "buttonApagar";
+            this.buttonApagar.Size = new System.Drawing.Size(138, 51);
+            this.buttonApagar.TabIndex = 37;
+            this.buttonApagar.Text = "Apagar";
+            this.buttonApagar.UseVisualStyleBackColor = true;
             // 
             // FormAtualizarApagarAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 537);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonApagar);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBoxld);
             this.Controls.Add(this.label7);
@@ -287,27 +287,26 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonEnviarFoto;
-        private System.Windows.Forms.PictureBox pictureBoxFoto;
-        private System.Windows.Forms.TextBox textBoxEndereco;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxTelefone;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButtonMasculino;
-        private System.Windows.Forms.RadioButton radioButtonFeminino;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNascimento;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxSobrenome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNome;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        public System.Windows.Forms.TextBox textBoxld;
+        internal System.Windows.Forms.Button buttonEnviarFoto;
+        internal System.Windows.Forms.PictureBox pictureBoxFoto;
+        internal System.Windows.Forms.TextBox textBoxEndereco;
+        internal System.Windows.Forms.TextBox textBoxTelefone;
+        internal System.Windows.Forms.GroupBox groupBox1;
+        internal System.Windows.Forms.DateTimePicker dateTimePickerNascimento;
+        internal System.Windows.Forms.TextBox textBoxSobrenome;
+        internal System.Windows.Forms.TextBox textBoxNome;
+        internal System.Windows.Forms.Button buttonBuscar;
+        internal System.Windows.Forms.TextBox textBoxld;
+        internal System.Windows.Forms.Label label6;
+        internal System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.Button buttonSalvar;
+        internal System.Windows.Forms.Button buttonApagar;
+        internal System.Windows.Forms.RadioButton radioButtonMasculino;
+        internal System.Windows.Forms.RadioButton radioButtonFeminino;
     }
 }
