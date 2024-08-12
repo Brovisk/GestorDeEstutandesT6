@@ -45,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxld = new System.Windows.Forms.TextBox();
+            this.textBoxId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
@@ -202,13 +202,13 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Nome";
             // 
-            // textBoxld
+            // textBoxId
             // 
-            this.textBoxld.Location = new System.Drawing.Point(136, 10);
-            this.textBoxld.Name = "textBoxld";
-            this.textBoxld.Size = new System.Drawing.Size(90, 20);
-            this.textBoxld.TabIndex = 34;
-            this.textBoxld.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxId.Location = new System.Drawing.Point(136, 10);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(90, 20);
+            this.textBoxId.TabIndex = 34;
+            this.textBoxId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label7
             // 
@@ -251,6 +251,7 @@
             this.buttonApagar.TabIndex = 37;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // FormAtualizarApagarAlunos
             // 
@@ -260,7 +261,7 @@
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.textBoxld);
+            this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonEnviarFoto);
             this.Controls.Add(this.pictureBoxFoto);
@@ -278,6 +279,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FormAtualizarApagarAlunos";
             this.Text = "FormulárioInserirEstudante2";
+            this.Load += new System.EventHandler(this.FormAtualizarApagarAlunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -296,7 +298,7 @@
         internal System.Windows.Forms.TextBox textBoxSobrenome;
         internal System.Windows.Forms.TextBox textBoxNome;
         internal System.Windows.Forms.Button buttonBuscar;
-        internal System.Windows.Forms.TextBox textBoxld;
+        internal System.Windows.Forms.TextBox textBoxId;
         internal System.Windows.Forms.Label label6;
         internal System.Windows.Forms.Label label5;
         internal System.Windows.Forms.Label label4;

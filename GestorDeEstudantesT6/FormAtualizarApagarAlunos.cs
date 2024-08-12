@@ -13,6 +13,8 @@ namespace GestorDeEstudantesT6
 {
     public partial class FormAtualizarApagarAlunos : Form
     {
+
+        Estudante estudante = new Estudante();
         public FormAtualizarApagarAlunos()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace GestorDeEstudantesT6
             // Cria um estudante.
             Estudante estudante = new Estudante();
             //Variáveis auxiliares
-            int id = Convert.ToInt32(textBoxld.Text);//Converte o texto do TextBox
+            int id = Convert.ToInt32(textBoxId.Text);//Converte o texto do TextBox
             string nome = textBoxNome.Text;
             string sobrenome = textBoxSobrenome.Text;
             DateTime nascimento = dateTimePickerNascimento.Value;
@@ -69,16 +71,16 @@ namespace GestorDeEstudantesT6
             {
                 pictureBoxFoto.Image.Save(foto, pictureBoxFoto.Image.RawFormat);
 
-                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, genero,
+                if (estudante.atualizarEstudante(id, nome, sobrenome, nascimento, telefone, genero,
                      endereco, foto))
                 {
-                    MessageBox.Show("Novo aluno cadastrado!", "Sucesso!", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    MessageBox.Show("Dados alterados!", "Sucesso!",
+                        MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado", "Falha!", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Dados não alterados.", "Falha!", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
@@ -86,6 +88,58 @@ namespace GestorDeEstudantesT6
                 MessageBox.Show("Campos não preenchidos!", "Erro!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            //Remove o estudante.
+            int id = Convert.ToInt32(textBoxId.Text);
+            //Pergunta se o aluno realmente quer apagar
+            if(MessageBox.Show("Tem certeza que deseja apagar esse aluno?",
+                "Apagar Aluno", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) 
+                == DialogResult.Yes)
+
+                    if (estudante.apagarEstudante(id))  
+            {
+                MessageBox.Show("Estudante removido!",
+                    "Sucesso!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                //Limpa as caixas de texto
+                textBoxId.Text = "";
+                textBoxNome.Text = "";
+                textBoxSobrenome.Text = "";
+                textBoxTelefone.Text = "";
+                textBoxEndereco.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Estudante não removido!",
+                    "Erro!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+    }
+        bool Verificar()
+        {
+            if ((textBoxNome.Text.Trim() == "") ||
+               (textBoxSobrenome.Text.Trim() == "") ||
+               (textBoxTelefone.Text.Trim() == "") ||
+               (textBoxEndereco.Text.Trim() == "") ||
+               (pictureBoxFoto.Image == null))
+
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void FormAtualizarApagarAlunos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

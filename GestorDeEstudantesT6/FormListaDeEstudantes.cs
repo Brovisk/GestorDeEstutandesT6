@@ -47,7 +47,7 @@ namespace GestorDeEstudantesT6
         {
             //Abre as informações do aluno selecionado em uma nova janela.
             FormAtualizarApagarAlunos formAtualizarApagarAlunos = new FormAtualizarApagarAlunos();
-            formAtualizarApagarAlunos.textBoxld.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[0].Value.ToString();
+            formAtualizarApagarAlunos.textBoxId.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[0].Value.ToString();
             formAtualizarApagarAlunos.textBoxNome.Text =
                 dataGridViewListaDeEstudantes.CurrentRow.Cells[1].Value.ToString();
             formAtualizarApagarAlunos.textBoxSobrenome.Text =
