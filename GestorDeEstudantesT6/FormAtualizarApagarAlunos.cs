@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,13 @@ namespace GestorDeEstudantesT6
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Busca estudante pela ID
+            //Já salva a ID convertida para INTEIRO
+            int id = Convert.ToInt32(textBoxId.Text);
+            MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
 
+            MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `id`=" + id,
+                meuBancoDeDados.getConexao);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -52,6 +59,23 @@ namespace GestorDeEstudantesT6
             if (radioButtonMasculino.Checked)
             {
                 genero = "Masculino";
+            }
+
+            bool Verificar()
+            {
+                if ((textBoxNome.Text.Trim() == "") ||
+                   (textBoxSobrenome.Text.Trim() == "") ||
+                   (textBoxTelefone.Text.Trim() == "") ||
+                   (textBoxEndereco.Text.Trim() == "") ||
+                   (pictureBoxFoto.Image == null))
+
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
 
             MemoryStream foto = new MemoryStream();
@@ -75,11 +99,11 @@ namespace GestorDeEstudantesT6
                      endereco, foto))
                 {
                     MessageBox.Show("Dados alterados!", "Sucesso!",
-                        MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Dados não alterados.", "Falha!", 
+                    MessageBox.Show("Dados não alterados.", "Falha!",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
@@ -95,51 +119,31 @@ namespace GestorDeEstudantesT6
             //Remove o estudante.
             int id = Convert.ToInt32(textBoxId.Text);
             //Pergunta se o aluno realmente quer apagar
-            if(MessageBox.Show("Tem certeza que deseja apagar esse aluno?",
-                "Apagar Aluno", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) 
+            if (MessageBox.Show("Tem certeza que deseja apagar esse aluno?",
+                "Apagar Aluno", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 == DialogResult.Yes)
 
-                    if (estudante.apagarEstudante(id))  
-            {
-                MessageBox.Show("Estudante removido!",
-                    "Sucesso!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                if (estudante.apagarEstudante(id))
+                {
+                    MessageBox.Show("Estudante removido!",
+                        "Sucesso!", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
 
-                //Limpa as caixas de texto
-                textBoxId.Text = "";
-                textBoxNome.Text = "";
-                textBoxSobrenome.Text = "";
-                textBoxTelefone.Text = "";
-                textBoxEndereco.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("Estudante não removido!",
-                    "Erro!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-    }
-        bool Verificar()
-        {
-            if ((textBoxNome.Text.Trim() == "") ||
-               (textBoxSobrenome.Text.Trim() == "") ||
-               (textBoxTelefone.Text.Trim() == "") ||
-               (textBoxEndereco.Text.Trim() == "") ||
-               (pictureBoxFoto.Image == null))
-
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private void FormAtualizarApagarAlunos_Load(object sender, EventArgs e)
-        {
-
+                    //Limpa as caixas de texto
+                    textBoxId.Text = "";
+                    textBoxNome.Text = "";
+                    textBoxSobrenome.Text = "";
+                    textBoxTelefone.Text = "";
+                    textBoxEndereco.Text = "";
+                    dateTimePickerNascimento.Value = DateTime.Now;
+                    pictureBoxFoto.Image = null;
+                }
+                else
+                {
+                    MessageBox.Show("Estudante não removido!",
+                        "Erro!", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
         }
     }
 }

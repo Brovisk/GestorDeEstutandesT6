@@ -279,7 +279,6 @@
             this.Controls.Add(this.label2);
             this.Name = "FormAtualizarApagarAlunos";
             this.Text = "FormulárioInserirEstudante2";
-            this.Load += new System.EventHandler(this.FormAtualizarApagarAlunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
