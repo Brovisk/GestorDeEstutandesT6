@@ -208,7 +208,8 @@
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(90, 20);
             this.textBoxId.TabIndex = 34;
-            this.textBoxId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
+            this.textBoxId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxId_KeyPress);
             // 
             // label7
             // 
@@ -229,7 +230,7 @@
             this.buttonBuscar.TabIndex = 35;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.button1_Click);
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // buttonSalvar
             // 

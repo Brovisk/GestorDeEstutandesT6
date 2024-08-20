@@ -26,48 +26,63 @@ namespace GestorDeEstudantesT6
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Busca estudante pela ID
-            //Já salva a ID convertida para INTEIRO
-            int id = Convert.ToInt32(textBoxId.Text);
-            MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
-
-            MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `id`=" + id,
-                meuBancoDeDados.getConexao);
-
-            DataTable tabela = estudante.getEstudantes(comando);
-
-            if(tabela.Rows.Count > 0)
+            try
             {
-                textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
-                textBoxSobrenome.Text = tabela.Rows[0]["Sobrenome"].ToString();
-                textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
-                textBoxEndereco.Text = tabela.Rows[0]["endereco"].ToString();
+                // Busca estudante pela ID.
+                // Já salva a ID convertida para INTEIRO.
+                int id = Convert.ToInt32(textBoxId.Text);
+                MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
 
-                dateTimePickerNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
+                MySqlCommand comando = new MySqlCommand("SELECT `id`,`nome`,`sobrenome`,`nascimento`,`genero`,`telefone`,`endereco`,`foto` FROM `estudantes` WHERE `id`=" + id,
+                    meuBancoDeDados.getConexao);
 
-                if (tabela.Rows[0]["genero"].ToString() == "feminino")
+                DataTable tabela = estudante.getEstudantes(comando);
+
+                if (tabela.Rows.Count > 0)
                 {
-                    radioButtonFeminino.Checked = true;
+                    textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
+                    textBoxSobrenome.Text = tabela.Rows[0]["sobrenome"].ToString();
+                    textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
+                    textBoxEndereco.Text = tabela.Rows[0]["endereco"].ToString();
+
+                    dateTimePickerNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
+
+                    if (tabela.Rows[0]["genero"].ToString() == "Feminino")
+                    {
+                        radioButtonFeminino.Checked = true;
+                    }
+                    else
+                    {
+                        radioButtonMasculino.Checked = true;
+                    }
+
+                    // A foto.
+                    byte[] imagem = (byte[])tabela.Rows[0]["foto"];
+                    // "objeto" intermediário entre a foto que está na tabela
+                    // e a foto que está salva no banco de dados.
+                    MemoryStream fotoDoAluno = new MemoryStream(imagem);
+                    // reconstrói a imagem com base em um "memory stream".
+                    pictureBoxFoto.Image = Image.FromStream(fotoDoAluno);
+
                 }
-                else
-                {
-                    radioButtonMasculino.Checked = true;
-                }
-                // A foto.
-                byte[] imagem = (byte[])tabela.Rows[0]["foto"];
-                // "objeto" intermediário entre a foto que está na tabela
-                // e a foto que está salva no banco de dados.
-                MemoryStream fotoDoAluno = new MemoryStream(imagem);
-                // reconstrói a imagem com base em um "memory stream".
-                pictureBoxFoto.Image = Image.FromStream(fotoDoAluno);
             }
+            catch
+            {
+                MessageBox.Show("Insira uma ID válida.",
+                    "ID Inválida", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -172,6 +187,69 @@ namespace GestorDeEstudantesT6
                         "Erro!", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+        }
+
+        private void textBoxId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) 
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Busca estudante pela ID.
+                // Já salva a ID convertida para INTEIRO.
+                int id = Convert.ToInt32(textBoxId.Text);
+                MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
+
+                MySqlCommand comando = new MySqlCommand("SELECT `id`,`nome`,`sobrenome`,`nascimento`,`genero`,`telefone`,`endereco`,`foto` FROM `estudantes` WHERE `id`=" + id,
+                    meuBancoDeDados.getConexao);
+
+                DataTable tabela = estudante.getEstudantes(comando);
+
+                if (tabela.Rows.Count > 0)
+                {
+                    textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
+                    textBoxSobrenome.Text = tabela.Rows[0]["sobrenome"].ToString();
+                    textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
+                    textBoxEndereco.Text = tabela.Rows[0]["endereco"].ToString();
+
+                    dateTimePickerNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
+
+                    if (tabela.Rows[0]["genero"].ToString() == "Feminino")
+                    {
+                        radioButtonFeminino.Checked = true;
+                    }
+                    else
+                    {
+                        radioButtonMasculino.Checked = true;
+                    }
+
+                    // A foto.
+                    byte[] imagem = (byte[])tabela.Rows[0]["foto"];
+                    // "objeto" intermediário entre a foto que está na tabela
+                    // e a foto que está salva no banco de dados.
+                    MemoryStream fotoDoAluno = new MemoryStream(imagem);
+                    // reconstrói a imagem com base em um "memory stream".
+                    pictureBoxFoto.Image = Image.FromStream(fotoDoAluno);
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Insira uma ID válida.",
+                    "ID Inválida", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

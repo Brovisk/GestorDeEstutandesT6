@@ -21,18 +21,28 @@ namespace GestorDeEstudantesT6
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //Atualiza a lista de estudantes.
         }
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-            //Atualiza a lista de estudantes.
+            
+            // Preenche a tabela com informações do banco de dados
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM ´estudantes`");
+            dataGridViewListaDeEstudantes.ReadOnly = true;
+            DataGridViewImageColumn colunaDeFotos = new DataGridViewImageColumn();
+            dataGridViewListaDeEstudantes.RowTemplate.Height = 80;
+            dataGridViewListaDeEstudantes.DataSource = estudante.pegarEstudantes(comando);
+            colunaDeFotos = (DataGridViewImageColumn)dataGridViewListaDeEstudantes.Columns[7];
+            colunaDeFotos.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewListaDeEstudantes.AllowUserToAddRows = false;
         }
 
         Estudante estudante = new Estudante();
 
         private void FormListaDeEstudantes_Load(object sender, EventArgs e)
         {
+            // Preenche a tabela com informações do banco de dados
             MySqlCommand comando = new MySqlCommand("SELECT * FROM ´estudantes`");
             dataGridViewListaDeEstudantes.ReadOnly = true;
             DataGridViewImageColumn colunaDeFotos = new DataGridViewImageColumn();
